@@ -5,11 +5,11 @@
   --color-white: hsl(0, 0%, 100%);
   --color-blues: hsl(225, 100%, 60%);
   --shadow-normal: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
-		0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    0 1px 2px 0 rgba(0, 0, 0, 0.06);
   --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-		0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-		0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 *,
@@ -17,8 +17,7 @@
 *::after {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   list-style: none;
   list-style-type: none;
   text-decoration: none;
@@ -29,8 +28,7 @@
 
 html {
   font-size: 100%;
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
   scroll-behavior: smooth;
   height: -webkit-fill-available;
 }
@@ -55,8 +53,7 @@ button {
   border: none;
   outline: none;
   background: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   text-decoration: none;
 }
 
@@ -108,25 +105,20 @@ video {
   white-space: nowrap;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   outline: none;
   border: none;
   border-radius: 0.25rem;
   text-transform: unset;
-  -webkit-box-shadow: var(--shadow-medium);
-          box-shadow: var(--shadow-medium);
-  -webkit-transition: all 0.3s ease-in-out;
+  box-shadow: var(--shadow-medium);
   transition: all 0.3s ease-in-out;
 }
-
 .btn-primary {
   padding: 0.75rem 1.5rem;
   margin-top: 1rem;
   color: var(--color-white);
   background: var(--color-blues);
-  -webkit-box-shadow: var(--shadow-medium);
-          box-shadow: var(--shadow-medium);
+  box-shadow: var(--shadow-medium);
 }
 
 .form-note {
@@ -135,7 +127,6 @@ video {
   height: 3rem;
   margin-bottom: 1.5rem;
 }
-
 .form-label {
   position: absolute;
   font-family: inherit;
@@ -147,10 +138,8 @@ video {
   padding: 0 0.25rem;
   color: var(--color-gray);
   background: var(--color-white);
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-
 .form-input {
   position: absolute;
   font-family: inherit;
@@ -168,21 +157,22 @@ video {
   border: 1.5px solid var(--color-grays);
   color: var(--color-black);
   background: transparent;
-  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-
+.form-input::-moz-placeholder {
+  opacity: 0;
+  visibility: hidden;
+  color: transparent;
+}
 .form-input::placeholder {
   opacity: 0;
   visibility: hidden;
   color: transparent;
 }
-
 .form-input:focus {
   outline: none;
   border: 2px solid var(--color-blues);
 }
-
 .form-input:focus ~ .form-label {
   top: -0.75rem;
   left: 1rem;
@@ -190,17 +180,23 @@ video {
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--color-blues);
-  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-
+.form-input:not(:-moz-placeholder-shown).form-input:not(:focus) ~ .form-label {
+  top: -0.75rem;
+  left: 1rem;
+  z-index: 9;
+  font-size: 0.875rem;
+  font-weight: 500;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
 .form-input:not(:placeholder-shown).form-input:not(:focus) ~ .form-label {
   top: -0.75rem;
   left: 1rem;
   z-index: 9;
   font-size: 0.875rem;
   font-weight: 500;
-  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 
@@ -210,13 +206,10 @@ video {
   height: auto;
   margin: 0 auto;
 }
-
 .contact-inform {
   padding: 4rem 2rem 2rem;
   border-radius: 0.25rem;
   color: var(--color-black);
   background: var(--color-white);
-  -webkit-box-shadow: var(--shadow-large);
-          box-shadow: var(--shadow-large);
-}
-/*# sourceMappingURL=index.css.map */
+  box-shadow: var(--shadow-large);
+}/*# sourceMappingURL=index.css.map */
